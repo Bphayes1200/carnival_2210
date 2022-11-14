@@ -29,6 +29,7 @@ RSpec.describe Ride do
       expect(ride1.rider_log.include?(visitor1)).to eq(true)
       expect(ride1.rider_log.include?(visitor2)).to eq(true)
       expect(ride1.rider_log).to eq({visitor1 => 2, visitor2 => 1})
+      expect(ride1.total_revenue).to eq(3)
 
     end 
   end 

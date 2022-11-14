@@ -19,6 +19,7 @@ class Ride
     total_amount_per_rider = rider_log.keys.find_all {|visitor| visitor = rider}
     final_cost = total_amount_per_rider.count * @admission_fee
     @rider_log[rider] = (final_cost)
+    @total_revenue = @rider_log.values.sum
   end 
 
 end
