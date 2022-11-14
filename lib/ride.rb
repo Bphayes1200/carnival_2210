@@ -16,10 +16,14 @@ class Ride
   end 
 
   def board_rider(rider)
-    total_amount_per_rider = rider_log.keys.find_all {|visitor| visitor = rider}
+    total_amount_per_rider = rider_log.keys.find_all {|visitor| visitor == rider}
     final_cost = total_amount_per_rider.count * @admission_fee
     @rider_log[rider] = (final_cost)
     @total_revenue = @rider_log.values.sum
+    $spending_money = rider.spending_money - @admission_fee
+  
+    # require 'pry'; binding.pry
+
   end 
 
 end

@@ -6,12 +6,16 @@ class Visitor
   def initialize(name, height, spending_money)
     @name = name 
     @height = height 
-    @spending_money = spending_money
+    $spending_money = spending_money
     @preferences = []
   end 
 
   def spending_money
-    @spending_money.delete_prefix('$').to_i
+    if $spending_money.class == String
+       $spending_money.delete_prefix('$').to_i
+    else 
+      $spending_money
+    end 
   end 
 
   def add_preference(preference)
