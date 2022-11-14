@@ -12,4 +12,14 @@ RSpec.describe Visitor do
       expect(visitor.preferences).to eq([])
     end 
   end 
+
+  describe "add_preference" do 
+    it 'will add a preference' do 
+      visitor = Visitor.new('Bruce', 54, '$10')
+      visitor.add_preference(:gentle)
+      visitor.add_preference(:water)
+      
+      expect(visitor.preferences).to eq([:gentle, :water])
+    end 
+  end 
 end 
