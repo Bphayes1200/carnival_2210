@@ -27,7 +27,8 @@ RSpec.describe Ride do
 
       expect(ride1.rider_log).to be_a(Hash)
       expect(ride1.rider_log.include?(visitor1)).to eq(true)
-      expect(ride2.rider_log.include?(visitor2)).to eq(true)
+      expect(ride1.rider_log.include?(visitor2)).to eq(true)
+      expect(ride1.rider_log).to eq({visitor1 => 2, visitor2 => 1})
 
     end 
   end 
